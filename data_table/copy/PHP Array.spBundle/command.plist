@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>category</key>
+	<string>Copy</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php
+&lt;?php
+
+$rows = [];
+$columns = fgetcsv(STDIN);
+while (($row = fgetcsv(STDIN)) !== false) {
+	$rows[] = array_combine($columns, $row);
+}
+
+
+$cmd = 'echo '.escapeshellarg(var_export($rows, true)).' | __CF_USER_TEXT_ENCODING='.posix_getuid().':0x8000100:0x8000100 pbcopy';
+shell_exec($cmd);</string>
+	<key>input</key>
+	<string>selectedtablerowsascsv</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>PHP Array</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>uuid</key>
+	<string>7979F91E-DD13-4B4B-B45A-0B708F9A842A</string>
+</dict>
+</plist>
