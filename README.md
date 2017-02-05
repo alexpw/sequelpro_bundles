@@ -4,7 +4,7 @@ I decided these should be saved somewhere, despite how basic and easy to redo th
 
 ## Requirements
 
-- php 5.3+
+- php 5.4+ (sorry, used [] array syntax)
 
 ## Install
 
